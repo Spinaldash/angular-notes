@@ -1,0 +1,21 @@
+.container-fluid
+  .row
+    .col-md-3.col-sm-1
+    .col-md-6.col-sm-10
+      .jumbotron#regHead
+        h3.register.page-header {{name}}
+        form
+          .form-group
+            label(for='email') Email
+            input#email.form-control(type='email', name='email', autofocus=true, ng-model='user.email')
+          .form-group
+            label(for='password') Password
+            input#password.form-control(type='password', name='password', ng-model='user.password')
+            //- span#xIcon.glyphicon.glyphicon-remove.form-control-feedback
+            //- span#checkIcon.glyphicon.glyphicon-ok.form-control-feedback
+          .form-group(ng-hide='name === "Login"')
+            rlabel(for='confirmPass') Confirm Password
+            input#confirmPass.form-control(type='password', name='confirmPass', ng-model='user.confirmPass')
+          .form-group
+            button#register.btn.btn-default(type='submit', ng-click='submit(user)') {{name}}
+    .col-md-3.col-sm-1
